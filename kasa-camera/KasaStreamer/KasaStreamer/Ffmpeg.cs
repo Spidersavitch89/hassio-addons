@@ -83,7 +83,7 @@ namespace KasaStreamer
                      $"-map 1:a:0 " +
                      // $"-vcodec libx264 " +
                      // $"-acodec aac " +
-                     $"-f flv " +
+                     // $"-f flv " +
                      (_cameraConfig.VideoFilter == null ? string.Empty : $"-vf {_cameraConfig.VideoFilter} ") +
                      $"rtmp://localhost:1935/live/{_cameraConfig.CameraName} " +
                      // SNAPSHOT OUTPUT
