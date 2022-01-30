@@ -68,22 +68,22 @@ namespace KasaStreamer
             return
                      $"-use_wallclock_as_timestamps 1 " +
                      // VIDEO INPUT
-                     // $"-r 15 " +
-                     // $"-f h264 " +
+                     $"-r 15 " +
+                     $"-f h264 " +
                      $"-thread_queue_size 1024 " +
                      $"-vsync 1 " +
                      $"-i tcp://{IPAddress.Loopback}:{videoPort} " +
                      // AUDIO INPUT
-                     // $"-f mulaw " +
-                     // $"-ar 8000 " +
+                     $"-f mulaw " +
+                     $"-ar 8000 " +
                      $"-async 1 " +
                      $"-i tcp://{IPAddress.Loopback}:{audioPort} " +
                      // VIDEO OUTPUT
                      $"-map 0:v:0 " +
                      $"-map 1:a:0 " +
-                     // $"-vcodec libx264 " +
-                     // $"-acodec aac " +
-                     // $"-f flv " +
+                     $"-vcodec copy " +
+                     $"-acodec copy " +
+                     $"-f flv " +
                      (_cameraConfig.VideoFilter == null ? string.Empty : $"-vf {_cameraConfig.VideoFilter} ") +
                      $"rtmp://localhost:1935/live/{_cameraConfig.CameraName} " +
                      // SNAPSHOT OUTPUT
