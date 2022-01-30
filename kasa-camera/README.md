@@ -1,6 +1,6 @@
 # Kasa-Camera
 
-MNT comment out `-f flv`
+MNT uncomment all settings but change vcodec and acodec to copy.
 
 ## Introduction
 This add-on allows you to access the stream of certain Kasa cameras that don't explicitly expose or support streaming on their own.
